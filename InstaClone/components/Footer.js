@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
 		justifyContent: 'center',
 		borderTopWidth: 0.2,
 		borderTopColor: 'grey',
+		padding: 10,
 	},
 	label: {
 		fontSize: 20,

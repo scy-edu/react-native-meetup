@@ -9,6 +9,7 @@ exports[`<Footer /> rendering renders correctly 1`] = `
       "borderTopColor": "grey",
       "borderTopWidth": 0.2,
       "justifyContent": "center",
+      "padding": 10,
     }
   }
 >
