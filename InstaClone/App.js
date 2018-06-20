@@ -11,7 +11,13 @@ import {
   Text,
   View
 } from 'react-native';
+
+/*
+ * Import components
+ */
+
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -19,6 +25,7 @@ export default class App extends Component<Props> {
     return (
 			<View style={styles.container}>
 				<Header />
+				<Footer />
 			</View>
     );
   }

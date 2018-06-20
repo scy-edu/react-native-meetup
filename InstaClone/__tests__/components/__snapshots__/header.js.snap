@@ -29,33 +29,3 @@ exports[`<Header /> rendering renders correctly 1`] = `
   </Text>
 </View>
 `;
-
-exports[`<Header /> renders correctly 1`] = `
-<View
-  style={
-    Object {
-      "borderBottomColor": "grey",
-      "borderBottomWidth": 0.2,
-      "height": 80,
-      "justifyContent": "flex-end",
-      "paddingBottom": 5,
-      "width": "100%",
-    }
-  }
->
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "alignSelf": "center",
-        "fontFamily": "BradleyHandITCTT-Bold",
-        "fontSize": 35,
-      }
-    }
-  >
-    InstaClone
-  </Text>
-</View>
-`;
