@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 import {
+	TouchableOpacity,
+	LayoutAnimation,
 	Dimensions,
 	View,
 	Text,
@@ -37,6 +39,12 @@ export const styles = StyleSheet.create({
 });
 
 class Photo extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			s: 300,
+		};
+	}
 	get imageAttributes() {
 		const {
 			uri,
@@ -45,7 +53,7 @@ class Photo extends Component {
 		return {
 			style: {
 				flex: 1,
-				height: 300,
+				height: this.state.s,
 				width,
 			},
 			source: {
@@ -69,11 +77,27 @@ class Photo extends Component {
 		</View>
 	}
 
+	_onPress = () => {
+		LayoutAnimation.spring();
+
+		if (this.state.s > 300) {
+			this.setState({
+				s: this.state.s - 15,
+			});
+		} else {
+			this.setState({
+				s: this.state.s + 15,
+			});
+		}
+	}
+
 	render() {
 		return (
 			<View style={styles['wrapper']}>
 				{this.author}
-				<Image {...this.imageAttributes} />
+				<TouchableOpacity onPress={this._onPress}>
+					<Image {...this.imageAttributes} />
+				</TouchableOpacity>
 			</View>
 		);
 	}

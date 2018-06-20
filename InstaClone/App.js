@@ -7,7 +7,8 @@
 import React, { Component } from 'react';
 import {
   Platform,
-  StyleSheet,
+	StyleSheet,
+	AsyncStorage,
   Text,
   View
 } from 'react-native';
@@ -22,6 +23,29 @@ import PhotoList from './components/PhotoList';
 import Footer from './components/Footer';
 
 export default class App extends Component {
+	async componentDidMount() {
+		await this.setItem('name', 'Stanley');
+		await this.getItem('name');
+	}
+
+	async setItem(key, value) {
+		try {
+			await AsyncStorage.setItem(key, value);
+		} catch (err) {
+			console.error(err);
+		}
+	}
+
+	async getItem(key) {
+		let item;
+		try {
+			item = await AsyncStorage.getItem(key);
+		} catch (err) {
+			console.error(err);
+		}
+		console.log('found item', item);
+	}
+
   render() {
     return (
 			<View style={styles.container}>
